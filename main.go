@@ -25,8 +25,6 @@ type Event struct {
 }
 
 func Handler(event Event) (string, error) {
-	fmt.Println(event.Width, event.FileName)
-	log.Print(event.Width, event.FileName)
 	sess, err := session.NewSession(aws.NewConfig().WithRegion(REGION))
 	if err != nil {
 		fmt.Println(err.Error())
